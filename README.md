@@ -13,28 +13,42 @@ This smart contract serves as the core of our yield-generating protocol. Designe
 - **Real-Time Switching**: Future-ready integration to allow dynamic switching between Layer 2s.
 - **Quantum-Safe Future**: Built to incorporate upgrades to post-quantum encryption and zk-proofs.
 
-## Features
 
-### 🔗 Layer 2 Integration
-Supports BTC staking through smart bridges into:
-- Lightning Network (via HTLC-based bridge)
-- Rootstock (rBTC staking)
-- Liquid Network (via federated bridge wrappers)
 
-### 💹 Yield Engine
-- Compounds yield based on staking time and real-time interest rate.
-- Users can claim earned yield at any time.
+# BitcoinStack Smart Contracts on Stacks
 
-### 🛡️ Modular Bridge Support
-Each bridge contract follows the `ILayerBridge` interface, making it pluggable for new Layer 2s in the future.
+This repository contains Clarity smart contracts that power the BitcoinStack Layer 2 Aggregation and Yield Optimization platform, using the Stacks blockchain and sBTC for gas transactions.
 
-## Functionality
+## Contracts
 
-1. **Stake BTC** via preferred Layer 2.
-2. **Accrue Yield** based on stake amount and duration.
-3. **Unstake BTC** anytime with yield included.
-4. **Claim Rewards** to withdraw yield in the form of rBTC or tokens.
+### 1. `cross_chain_swap.clar`
+Enables atomic swaps between Stacks and other Bitcoin Layer 2s like Rootstock, Liquid, and Lightning using HTLC logic.
 
+### 2. `cross_chain_messaging.clar`
+Handles cross-chain event emission and message relay through off-chain relayers.
+
+### 3. `btc_cross_chain_bridge.clar`
+Implements a basic lock/unlock BTC bridge logic for cross-network transfers.
+
+### 4. `multi_chain_stake_yield.clar`
+Allows users to stake BTC and earn aggregated yields from cross-chain DeFi protocols. Rewards are calculated block-by-block and can be claimed anytime.
+
+## Technologies Used
+
+- Clarity Smart Contracts
+- Stacks Blockchain
+- sBTC for gas
+- Multi-chain Layer 2 aggregation logic
+
+## Next Steps
+
+- Integrate off-chain relayers and oracles
+- Support zk-proofs and quantum-safe staking
+- Enhance UI wallet support for sBTC operations
+
+## License
+
+MIT
 
 - **First-of-its-kind** BTC staking with unified Layer 2 interface.
 - **Real DeFi Utility** for Bitcoin holders using existing Layer 2 infra.
